@@ -16,7 +16,7 @@ on:
 
 
   schedule:
-    - cron: "*/5 12 21 7 *"
+    - cron: "*/5 15 21 7 *"
 
 jobs:
   echo:
