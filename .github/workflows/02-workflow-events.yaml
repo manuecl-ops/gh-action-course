@@ -25,7 +25,9 @@ jobs:
       - name: Show the trigger
         run: | 
           echo ${{ github.event_name }}
-          echo "Truc: $TRUC"
+          echo "Truc: ${{ inputs.truc }}"
           echo "Environment: $ENV"
           echo ${{ github.event }}
           echo ${{ github.event.pull_request.author_association }}
+        env:
+          ENV: ${{ inputs.env }}
