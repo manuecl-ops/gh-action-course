@@ -15,7 +15,7 @@ jobs:
       - name: Failed step
         run: |
           echo "I will fail"
-          false
+          # false
       - name: Say goobye
         run:
           echo "Goodbye!"
