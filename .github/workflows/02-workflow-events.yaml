@@ -28,6 +28,12 @@ jobs:
           echo "Truc: ${{ inputs.truc }}"
           echo "Environment: $ENV"
           echo ${{ github.event }}
-          echo ${{ github.event.pull_request.author_association }}
+          echo ${{ github.event.pull_request.author_association }}        
         env:
           ENV: ${{ inputs.env }}
+      - name: Show the date
+        run: date
+      
+      - name: Show the date 2
+        run: date --rfc-email
+  
