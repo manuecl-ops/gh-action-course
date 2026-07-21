@@ -1,9 +1,31 @@
 name: 02 - Workflow Events
-on: push
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      truc:
+        description: "Machin"
+        type: choice
+        options:
+          - Alpha
+          - Bravo
+          - Charlie
+      env:
+        type: environment
+
+
+  schedule:
+    - cron: "*/5 12 21 7 *"
+
 jobs:
-    echo:
-        runs-on: ubuntu-latest
-        steps:
-            - name: Show the trigger
-              run: echo ${{ github.event_name }}
-              
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show the trigger
+        run: | 
+          echo ${{ github.event_name }}
+          echo "Truc: $TRUC"
+          echo "Environment: $ENV"
+          echo ${{ github.event }}
+          echo ${{ github.event.pull_request. }}
