@@ -1,6 +1,6 @@
 name: 02 - Workflow Events
 on:
-  push:
+  # push:
   pull_request:
   workflow_dispatch:
     inputs:
@@ -16,7 +16,7 @@ on:
 
 
   schedule:
-    - cron: "*/5 15 21 7 *"
+    - cron: "*/5 * * * *"
 
 jobs:
   echo:
