@@ -28,4 +28,4 @@ jobs:
           echo "Truc: $TRUC"
           echo "Environment: $ENV"
           echo ${{ github.event }}
-          echo ${{ github.event.pull_request. }}
+          echo ${{ github.event.pull_request.author_association }}
