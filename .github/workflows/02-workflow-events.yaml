@@ -15,8 +15,8 @@ on:
         type: environment
 
 
-  schedule:
-    - cron: "*/5 * * * *"
+  # schedule:
+  #   - cron: "*/5 * * * *"
 
 jobs:
   echo:
