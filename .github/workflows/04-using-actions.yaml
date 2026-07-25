@@ -3,11 +3,23 @@ on:
   - push
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     steps:
       - name: Checkout Code
         uses: actions/checkout@v7
 
-      - name: Printing Folders
-        run: find .
+      - uses: actions/setup-node@7
+        with:
+          node-version: 24
+    
+      - name: Install Deps
+        run: npm ci
+        working-directory: 04-using-actions/react-app
 
+      - name: Run tests
+        run: |
+            cd 04-using-actions/react-app
+            npm test
+            
+
+        
